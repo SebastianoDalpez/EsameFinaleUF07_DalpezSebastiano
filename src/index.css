@@ -15,11 +15,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #64f5ff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: purple;
 }
 
 body {
@@ -33,6 +33,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -60,7 +61,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #94ff74;
   }
   button {
     background-color: #f9f9f9;
