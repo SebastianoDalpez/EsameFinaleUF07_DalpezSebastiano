@@ -1,17 +1,22 @@
 import { BrowserRouter, Routes,Route,Link } from 'react-router-dom';
 import JokeList from '../components/JokeList';
+import '../Index.css';
 
-function SeeTenJokes(){
-    
-    return(
+function SeeJokesDad(){
+     return(
         <>
-        <h1>Qui puoi trovare varie battute e barzellette brevi su ambiti random</h1>
+        <h1>Qui puoi trovare varie battute e barzellette su Dad</h1>
+
+        <h2>Ecco x battute su l'argomento Dad </h2>
+
+        <br />
+        
         <JokeList /> {/**importo il componente "JokeList" il quale restituisce una lista con 10 "jokes" */}
+        <br />
+        <br />
         <Link to='/'>Ritorna alla Home</Link> 
-        {//aggiungere possibilità di selezionare tipo di Joke
-        }
         </>
     )
-}
 
-export default SeeTenJokes;
+}
+export default SeeJokesDad;

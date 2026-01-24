@@ -3,7 +3,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css'
 import Home from './pages/Home';
-import GetTenJokes from './pages/SeeTenJokes';
+import SeeTenJokes from './pages/SeeTenJokesProg';
+import SeeTenJokesGeneral from './pages/SeeTenJokesGeneral';
+import SeeJokesKK from './pages/SeeJokesKK';
+import SeeJokesDad from './pages/SeeJokesDad';
 
 
 
@@ -37,8 +40,12 @@ function App() {
            *    e dare loro la possibilità di accedere alla cache gestita dal QueryClient, facendo quindi la funzione di "Provider" 
            */
           }
-          
-        <h1>JOKE.COM</h1>
+
+        <header id="banner">
+          <h1 id="mainTitle">JOKE.COM</h1>
+        </header> 
+        
+        
         <BrowserRouter>
           {/**
            * Tutti gli elementi messi dentro il tag "<Routes>" scompaiono quando si accede ad un altra pagina
@@ -47,11 +54,19 @@ function App() {
           }
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/pages/SeeTenJokes' element={<GetTenJokes />}/>
+          <Route path='/pages/SeeTenJokesProg' element={<SeeTenJokes />}/>
+          <Route path='/pages/SeeTenJokesGeneral' element={<SeeTenJokesGeneral />}/>
+          <Route path='/pages/SeeJokesKK' element={<SeeJokesKK />}/>
+          <Route path='/pages/SeeJokesDad' element={<SeeJokesDad />}/>
         </Routes>
 
         </BrowserRouter>
+        <footer id="mainFooter">
+          <h3>this site is made by me®</h3>
+        </footer>
       </QueryClientProvider>
+
+      
       </>
   );
  }

@@ -13,9 +13,81 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evita lo scroll orizzontale */
+}
+
+p{
+  color: black;
+}
+body {
+  background-color: grey;
+}
+
+div#divMenuTendina {
+  display: flex;
+  justify-content: center;
+}
+
+ol{
+  color: white;
+  justify-items: center;
+  
+}
+
+select#JokesType{
+  margin-left: 10px; 
+  background-color: #0075ff;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-weight: 700;
+  border-radius: 8px;
+  height: 20px;
+  width: 150px;
+}
+
+header#banner{
+  display: flex; 
+  width: 100vw;          /* 100% della larghezza della finestra */
+  position: absolute; 
+  top: 0;    
+  left: 0;
+  right: 0;
+  background-color: #dbfe01;
+  border-radius: 100px;
+  height: 100px;
+  justify-content: center;  
+  align-items: center;
+  box-shadow: 20px 20px 50px 15px grey;
+}
+
+footer#mainFooter{
+  display: flex; 
+  background-color: #0075ff;
+  position: absolute;
+  width: 100%;
+  justify-content: center;  
+  align-items: center;
+  top: 95%;
+  bottom: 5px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  border-radius: 100px;
+}
+
 a {
   font-weight: 500;
-  color: #64f5ff;
+  color: #ECD06F;
   text-decoration: inherit;
 }
 a:hover {
@@ -30,30 +102,49 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+h1{
   font-size: 3.2em;
   line-height: 1.1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
 }
+
+h1#mainTitle{
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: black;
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3{
+  color: rgb(255, 255, 255);
+  font-family: "Macondo", cursive;
+
+}
+
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 5px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-style:normal;
+  font-size: 20px;
+  font-weight: 600;
+  font-family:'Times New Roman', Times, serif;
+  background-color: #0075ff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
 }
-button:focus,
+button:focus 
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
