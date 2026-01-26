@@ -3,7 +3,31 @@ import type {IJoke, TJoke} from '../interfaces/jokeInterface';
 import { useQuery } from "@tanstack/react-query"
 
 
-function JokeList() {
+interface IJokeList{ //Questa interfaccia determina il fatto che qualsiasi altro componente che voglia utilizzare al suo interno il componente JokeList (quindi essere il padre di JokeList) durante l'invocazione di JokeList deve fornire necessariamente un oggetto (props) che contenga una proprietà chiamata "selezionaApi" di tipo number.
+    selezionaApi: number;
+}
+
+                    //la chiave che viene scritta dentro le {} è la proprietà che vogliamo estrarre dall'oggetto generale (in questo caso vogliamo estrarre "selezionaApi" da "props")
+function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiama "props" e contiene "selezionaApi" che vale jokeType (ad esempio 1). React quindi in "background" fa questo: selezionare l'oggetto "props", cercare il nome (chiave) "selezionaApi" e creare una variabile locale con lo stesso nome e che contenga lo stesso valore (ad esempio 1 nel caso di SeeTenJokes)
+    /**qui viene usata la destrutturazione: significa che dall'oggetto "props" che arriva da SeeTenJokes
+     * viene estratto il valore che viene indicato "selezionaApi" per venire poi usato per selezionare 
+     * la corretta chiamata API da eseguire.
+     */ 
+
+        let API:string; //variabile per contenere l'API, ovvero contiene (obbligatoriamente) una stringa (che è il "link" dell'API) che verrà poi passato alla funzione "fetch"
+
+        //scelta dell'API da utilizzare in base al valore ricevuto come props 
+        if (selezionaApi === 1){ 
+            API = "https://official-joke-api.appspot.com/jokes/programming/ten";
+        } else if (selezionaApi === 2){ 
+            API = "https://official-joke-api.appspot.com/jokes/general/ten"  
+        } else if (selezionaApi === 3){ 
+            API = "https://official-joke-api.appspot.com/jokes/knock-knock/ten"
+        } else if (selezionaApi === 4){ 
+            API = "https://official-joke-api.appspot.com/jokes/dad/ten"
+        }
+
+
         /**Recuperare i dati dell API usando la libreria React Query
          * 
          * Come funziona useQuery:
@@ -24,7 +48,7 @@ function JokeList() {
          */
         const {data, isLoading, isFetching, refetch, error} = useQuery<TJoke>({ //
             queryKey: ["jokes"],  //nome che serve a react per identificare quel tipo di dato nella cache
-            queryFn: async ()  => await fetch("https://official-joke-api.appspot.com/jokes/programming/ten").then(data=>data.json())   //queryFn: la "parte" della Hook useQuery che contiene "cosa deve fare veramente" la useQuery (in questo caso fare una fetch)
+            queryFn: async ()  => await fetch(API).then(data=>data.json())   //queryFn: la "parte" della Hook useQuery che contiene "cosa deve fare veramente" la useQuery (in questo caso fare una fetch)
         });                             //fetch è una funzione che restituisce una promise: significa che restituisce una "promessa" che prima o dopo i dati (nel caso desiderato) arriveranno; tuttavia i dati potrebbero anche non arrivare, ecco perchè bisogna gestire anche il caso di errore.
                                         //await è una funzione che è legata alla fetch e ferma l'esecuzione del codice finchè la promise (fetch) non da un risultato, indipendentemente che sia negativo o positivo.
         
