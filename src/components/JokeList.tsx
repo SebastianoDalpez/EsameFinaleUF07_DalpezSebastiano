@@ -25,7 +25,7 @@ function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiam
             API = "https://official-joke-api.appspot.com/jokes/knock-knock/ten"
         } else if (selezionaApi === 4){ 
             API = "https://official-joke-api.appspot.com/jokes/dad/ten"
-        }
+        } 
 
 
         /**Recuperare i dati dell API usando la libreria React Query
@@ -88,7 +88,6 @@ function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiam
             )
         }
           
-
         //Elemento che viene "dato in output", ovvero quello che viene esportato ed utilizzato nelle altre pagine ("SeeTenJokes.tsx")
         return(
             <>  

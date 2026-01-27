@@ -1,7 +1,7 @@
 export type TJoke = IJoke[];
 /**
-    * IJoke "serve" per "controllare" il singolo elemento 
-    * TJoke "serve" per "controllare" una moltitudine di elementi
+    * IJoke "serve" per "controllare" il singolo elemento: quindi se da un API arriva un singolo oggetto si usa IJoke (vedi SingleJoke)
+    * TJoke "serve" per "controllare" una moltitudine di elementi: quindi se da un API arriva un array di oggetti si usa TJoke (vedi JokeList)
 */
 export interface IJoke { 
     /**
@@ -13,9 +13,6 @@ export interface IJoke {
         * Questo porta ad un vantaggio principale, ovvero quello di avere la sicurezza 
         * che dentro quegli oggetti non ci saranno mai campi diversi da quelli definiti nell'interfaccia
         * (se si prova ad accedere ad un campo non esistente (ad esempio "author") React darà errore).
-        * 
-
-        * 
      */
 
     //questi 4 attributi sono gli unici che possono essere applicati agli oggetti di tipo "Joke"

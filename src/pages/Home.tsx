@@ -16,6 +16,8 @@ function Home() {
         <Link to='/pages/SeeJokesKK'>Fatti una risata (Knock-knock) </Link>
         <br />
         <Link to='/pages/SeeJokesDad'>Fatti una risata (Dad ) </Link>
+        <br />
+        <Link to='/pages/JokeOfTheDay'>JOKE OF THE DAY </Link>
     </>
     )
 }

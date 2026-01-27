@@ -7,6 +7,7 @@ import SeeTenJokes from './pages/SeeTenJokesProg';
 import SeeTenJokesGeneral from './pages/SeeTenJokesGeneral';
 import SeeJokesKK from './pages/SeeJokesKK';
 import SeeJokesDad from './pages/SeeJokesDad';
+import JokeOfTheDay from './pages/jokeOfTheDay';
 
 
 
@@ -58,6 +59,7 @@ function App() {
           <Route path='/pages/SeeTenJokesGeneral' element={<SeeTenJokesGeneral />}/>
           <Route path='/pages/SeeJokesKK' element={<SeeJokesKK />}/>
           <Route path='/pages/SeeJokesDad' element={<SeeJokesDad />}/>
+          <Route path='/pages/JokeOfTheDay' element={<JokeOfTheDay />}/>
         </Routes>
 
         </BrowserRouter>
