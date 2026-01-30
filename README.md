@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+<!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -70,4 +70,84 @@ export default defineConfig([
     },
   },
 ])
-```
+``` -->
+
+Progetto Esame: Joke.com
+
+
+
+DESCRIZIONE E SCOPO DEL PROGETTO:
+Joke.COM è una Single Page Application (SPA) realizzata con React e TypeScript. Lo scopo è gestire la visualizzazione di battute tramite API esterne e permettere l'invio di nuovi contenuti (nuove battute) attraverso un form dedicato.
+
+
+
+ISTRUZIONI PER L'INSTALLAZIONE E L'ESECUZIONE:
+Scaricare la cartella del progetto.
+
+Installare le dipendenze: npm install.
+
+Avviare il server locale: npm run dev.
+
+Aprire il browser all'indirizzo indicato (es. http://localhost:5173).
+
+
+
+DESCRIZIONE DELL' API UTILIZZATA:
+Lettura: Chiamate GET a endpoint pubblici per recuperare le battute. Ogni chiamata restituisce un oggetto di tipo Joke con 4 attributi: Type, Setup, Punchline ed Id
+L'API dava la possibilità di ricevere varie tipologie di battute, e qui sono state implementate tutte e separate, ognuna con una pagina dedicata.
+
+Invio: Chiamate POST verso JSONPlaceholder per simulare il caricamento dei dati.
+
+
+
+CREDENZIALI E MOCK:
+Credenziali: Nessuna credenziale/key richiesta.
+
+Mock: Viene usato JSONPlaceholder; l'ID restituito dopo il POST è sempre 101 per confermare l'operazione, anche se l'id immesso nel form è diverso
+
+
+
+
+STRUTTURA DEL PROGETTO: 
+Home.tsx: Dashboard con layout a card. Pagina principale che permette la navigazione verso tutte le altre
+
+App.tsx: Definizione delle rotte e del layout principale.
+
+CreateYourJoke.tsx: pagina che gestice il form di invio, i dati vengono inviati tramite la chiamata POST messa nel componente collegato a questa pagina, ovvero "CreateYourJoke.tsx"
+
+SeeJokesDad.tsx, SeeJokesKK.tsx, SeeTenJokesProg.tsx, SeeTenJokesGeneral.tsx, JokeOfTheDay.tsx sono le pagine che permettono la visualizzazione delle varie categorie di Jokes. Tutte, tranne JokeOfTheDay permettono di "ricaricare" l'API per ricevere nuovi dati.
+
+jokeInterface.tsx: file contenente l'interfaccia e il tipo per controllare e gestire gli oggetti di tipo Joke
+
+
+
+
+ELENCO FUNZIONALITÀ COMPLETATA
+
+REQUISITI MINIMI: 
+Struttura base del progetto ( components/ , pages/ )                      V
+Routing con almeno 2 pagine (es. lista e dettaglio)                       V
+TypeScript base (interfacce per oggetti API, props tipizzate)             V
+Una chiamata API utilizzando la libreria React Query con metodo GET e     V
+visualizzazione dai dati ottenuti.                                        
+
+REQUISITI AVANZATI: 
+Struttura del progetto meglio articolata con Componenti riutilizzabili    V
+e Tipi di dato separati per argomento ( Post , Photo , Cats )         
+
+Chiamate API Avanzate:
+  Una o più chiamate con gestione async/await
+  Una o più chiamate utilizzando la libreria React Query                  V
+  (in totale 2 chiamate GET)  
+  Una chiamata di tipo POST. (in totale 1 chiamata POST)                  V
+  Ogni chiamata API deve avere una propria gestione degli errori.         V
+
+Documentazione del codice                                                 V
+
+
+
+
+
+
+
+
