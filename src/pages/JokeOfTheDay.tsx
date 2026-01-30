@@ -7,10 +7,6 @@ function JokeOfTheDay(){
      return(
         <>
         <h1>JOKE OF THE DAY</h1>
-
-        <h2>Ecco il Joke di oggi </h2>
-
-        <br />
         < SingleJoke/> 
         <br />
         <br />

@@ -7,7 +7,8 @@ import SeeTenJokes from './pages/SeeTenJokesProg';
 import SeeTenJokesGeneral from './pages/SeeTenJokesGeneral';
 import SeeJokesKK from './pages/SeeJokesKK';
 import SeeJokesDad from './pages/SeeJokesDad';
-import JokeOfTheDay from './pages/jokeOfTheDay';
+import JokeOfTheDay from './pages/JokeOfTheDay';
+import SendYourJoke from './pages/SendYourJoke';
 
 
 
@@ -60,11 +61,12 @@ function App() {
           <Route path='/pages/SeeJokesKK' element={<SeeJokesKK />}/>
           <Route path='/pages/SeeJokesDad' element={<SeeJokesDad />}/>
           <Route path='/pages/JokeOfTheDay' element={<JokeOfTheDay />}/>
+          <Route path='/pages/SendYourJoke' element={<SendYourJoke />}/>
         </Routes>
 
         </BrowserRouter>
         <footer id="mainFooter">
-          <h3>this site is made by me®</h3>
+          <h3>made by Sebastiano Dalpez</h3>
         </footer>
       </QueryClientProvider>
 

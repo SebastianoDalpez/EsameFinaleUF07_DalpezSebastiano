@@ -2,8 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import type {IJoke, TJoke} from '../interfaces/jokeInterface';
 import { useState } from "react";
 
-//è stato creato un altro componente perchè JokeList funziona solo con un vettore di valori e non con valori singoli 
-
+//è stato creato un altro componente perchè JokeList funziona solo con un vettore di oggetti (.map) e non con oggetti singoli 
 
 let a:number = Math.round(Math.random() * (365 - 0) + 0);
 /**genera numero casuale tra 0 e 365 così da avere un Joke diverso "ogni giorno"
@@ -53,8 +52,6 @@ function SingleJoke(){
 
     return (
         <>
-            <h1>Joke singolo:</h1>
-            <br />
             {/** la keyword "?" permette a react di riempire quei 2 campi ("setup" e "punchline") con "undefined" nei momenti in cui i dati non sono neancora arrivati o non sono disponibili, evitando di mandare la pagina in errore (Optional Chaining) */}
             <p>{data?.setup}</p>  
             <p>{data?.punchline}</p>

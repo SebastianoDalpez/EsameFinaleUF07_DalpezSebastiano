@@ -31,11 +31,11 @@ function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiam
         /**Recuperare i dati dell API usando la libreria React Query
          * 
          * Come funziona useQuery:
-         * 1) Controlla la cache: se in cache sono già presenti dei dati con l'etichetta "jokes"
+         * 1) Controlla in cache se sono già presenti dei dati con l'etichetta "jokes"
          *      Sono dati non scaduti (ovvero presenti da "non troppo tempo")? Se si, evita di fare la fetch e restituisce quei dati "cachati"
          *                                                                     Se no, fa partire la queryFn la quale a sua volta fa la fetch
-         * 2) Se viene eseguita la fetch, React imposta isLoading a true (e apparirà qualunque cosa sia stata implementata dentro isLoading)
-         * 3) Se i dati arrivano, li mostra, li salva in cache e imposta isLoading a false.
+         * 2) Se viene eseguita la fetch, React imposta isLoading a true (e apparirà qualunque cosa sia stata implementata dentro isLoading) e chiede i dati al server
+         * 3) Se i dati arrivano, li mostra, li salva in cache (con la relativa etichetta "jokes") e imposta isLoading a false.
          *      Se non arrivano, imposta lo stato ad error e isLoading a false.
          * 
          * 
@@ -50,7 +50,7 @@ function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiam
             queryKey: ["jokes"],  //nome che serve a react per identificare quel tipo di dato nella cache
             queryFn: async ()  => await fetch(API).then(data=>data.json())   //queryFn: la "parte" della Hook useQuery che contiene "cosa deve fare veramente" la useQuery (in questo caso fare una fetch)
         });                             //fetch è una funzione che restituisce una promise: significa che restituisce una "promessa" che prima o dopo i dati (nel caso desiderato) arriveranno; tuttavia i dati potrebbero anche non arrivare, ecco perchè bisogna gestire anche il caso di errore.
-                                        //await è una funzione che è legata alla fetch e ferma l'esecuzione del codice finchè la promise (fetch) non da un risultato, indipendentemente che sia negativo o positivo.
+                                        //await è un operatore che è legato alla async e ferma l'esecuzione del codice finchè la promise (fetch) non da un risultato, indipendentemente che sia negativo o positivo.
         
         
          
