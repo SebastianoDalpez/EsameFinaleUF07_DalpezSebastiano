@@ -82,7 +82,7 @@ Joke.COM è una Single Page Application (SPA) realizzata con React e TypeScript.
 
 
 ISTRUZIONI PER L'INSTALLAZIONE E L'ESECUZIONE:
-Scaricare la cartella del progetto.
+Scaricare la repository del progetto.
 
 Installare le dipendenze: npm install.
 
@@ -94,35 +94,47 @@ Aprire il browser all'indirizzo indicato (es. http://localhost:5173).
 
 DESCRIZIONE DELL' API UTILIZZATA:
 Lettura: Chiamate GET a endpoint pubblici per recuperare le battute. Ogni chiamata restituisce un oggetto di tipo Joke con 4 attributi: Type, Setup, Punchline ed Id
-L'API dava la possibilità di ricevere varie tipologie di battute, e qui sono state implementate tutte e separate, ognuna con una pagina dedicata.
+L'API dava la possibilità di ricevere varie tipologie di battute, e qui sono state implementate tutte, separate ognuna con una pagina dedicata.
 
-Invio: Chiamate POST verso JSONPlaceholder per simulare il caricamento dei dati.
+Invio: Chiamate POST verso JSONPlaceholder per simulare l'invio di una propria battuta. L'utente deve inserire i 4 valori Type, Setup, Punchline ed Id per riempire un oggetto di tipo joke che verrà poi inviato al server di prova di JSONPlaceholder. 
 
 
 
 CREDENZIALI E MOCK:
 Credenziali: Nessuna credenziale/key richiesta.
 
-Mock: Viene usato JSONPlaceholder; l'ID restituito dopo il POST è sempre 101 per confermare l'operazione, anche se l'id immesso nel form è diverso
+Mock: Viene usato JSONPlaceholder per l'invio di dati; l'ID restituito dopo il POST è sempre 101 per confermare l'operazione, anche se l'id immesso nel form è diverso (ad esempio se l'utente inserisce come Id il valore 345, il server di JSONPlaceholder ignora quell'Id e lo imposta automaticamente a 101)
 
 
 
 
 STRUTTURA DEL PROGETTO: 
-Home.tsx: Dashboard con layout a card. Pagina principale che permette la navigazione verso tutte le altre
+App.tsx: Definizione delle rotte e del layout principale. Contiene inoltre anche il "QueryClient" per la coordinazione di tutte le chimate fatte con "ReactQuery" all'interno dell'intero progetto.
 
-App.tsx: Definizione delle rotte e del layout principale.
+PAGINE:
+Home.tsx: Dashboard con layout a card. Pagina principale che permette la navigazione verso tutte le altre.
 
-CreateYourJoke.tsx: pagina che gestice il form di invio, i dati vengono inviati tramite la chiamata POST messa nel componente collegato a questa pagina, ovvero "CreateYourJoke.tsx"
+SeeJokesDad.tsx, SeeJokesKK.tsx, SeeTenJokesProg.tsx, SeeTenJokesGeneral.tsx, JokeOfTheDay.tsx sono le pagine che permettono la visualizzazione delle varie categorie di Jokes. Tutte queste pagine (tranne "JokeOfTheDay.tsx" che utilizza un componente dedicato "SingleJoke.tsx" che restituisce un solo joke alla volta) utlizzano al loro interno lo stesso componente riutilizzabile "JokeList.tsx" che restituisce la lista di battute "personalizzate" per ogni pagina. Tutte, tranne "JokeOfTheDay.tsx", permettono di "ricaricare" l'API per ricevere nuovi dati.
 
-SeeJokesDad.tsx, SeeJokesKK.tsx, SeeTenJokesProg.tsx, SeeTenJokesGeneral.tsx, JokeOfTheDay.tsx sono le pagine che permettono la visualizzazione delle varie categorie di Jokes. Tutte, tranne JokeOfTheDay permettono di "ricaricare" l'API per ricevere nuovi dati.
-
-jokeInterface.tsx: file contenente l'interfaccia e il tipo per controllare e gestire gli oggetti di tipo Joke
-
+SendYourJoke.tsx: pagina che "chiama" il componente "CreateYourJoke.tsx". I dati vengono inviati tramite la chiamata POST messa nel componente "CreateYourJoke.tsx".
 
 
+COMPONENTI: 
+JokeList.tsx è il componente (riutilizzabile) che restituisce una lista di battute; "l'argomento" di queste battute è determinato dal parametro (numerico) che si passa al componente: ogni pagina "padre" di JokeList è identificata da un numero (SeeTenJokesProg.tsx (1), SeeTenJokesGeneral.tsx (2), SeeJokesKK.tsx (3), SeeJokesDad.tsx (4)) e quando chiama il figlio "JokeList.tsx" passa anche quel parametro numerico. Dentro "JokeList.tsx" viene poi selezionata l'API da eseguire in base al parametro ricevuto, associando ad ogni parametro un API diversa.
+Questo componente è riutilizzabile ed è usato il figlio di 4 componenti: "SeeJokesDad.tsx", "SeeJokesKK.tsx", "SeeTenJokesProg.tsx", "SeeTenJokesGeneral.tsx".
 
-ELENCO FUNZIONALITÀ COMPLETATA
+SingleJoke.tsx è il componente che ha lo stesso funzionamento ed obbiettivo di "JokeList.tsx" ma adattato per restituire un singolo oggetto joke invece che un vettore di oggetti joke; è il figlio di "JokeOfTheDay.tsx" e chiede al server un solo joke selezionando in base all'Id (generato causalmete ogni "giorno").
+
+CreateYourJoke.tsx è il componente che permette l'invio (al server di "JSONPlaceholder") di un oggetto di tipo Joke il quale viene riempito con parametri scelti dall'utente. Utilizza una chiamata API di tipo "POST" e tramite un form "raccoglie" i dati dall'utente; è il componente figlio di "SendYourJoke.tsx".
+
+
+INTERFACCIE:
+jokeInterface.tsx: file contenente l'interfaccia e il Tipo per controllare e gestire gli oggetti di tipo Joke (TJoke e IJoke)
+
+
+
+
+ELENCO FUNZIONALITÀ COMPLETATE:
 
 REQUISITI MINIMI: 
 Struttura base del progetto ( components/ , pages/ )                      V
@@ -136,13 +148,12 @@ Struttura del progetto meglio articolata con Componenti riutilizzabili    V
 e Tipi di dato separati per argomento ( Post , Photo , Cats )         
 
 Chiamate API Avanzate:
-  Una o più chiamate con gestione async/await
+  Una o più chiamate con gestione async/await                             V
   Una o più chiamate utilizzando la libreria React Query                  V
   (in totale 2 chiamate GET)  
   Una chiamata di tipo POST. (in totale 1 chiamata POST)                  V
   Ogni chiamata API deve avere una propria gestione degli errori.         V
-
-Documentazione del codice                                                 V
+  Documentazione del codice                                               V
 
 
 
