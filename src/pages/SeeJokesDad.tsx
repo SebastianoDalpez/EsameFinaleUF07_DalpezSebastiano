@@ -6,9 +6,9 @@ function SeeJokesDad(){
     const jokeType = 4;
      return(
         <>
-        <h1>Qui puoi trovare varie battute e barzellette su Dad</h1>
+        <h1>Qui puoi trovare varie battute e barzellette su Dad Jokes</h1>
 
-        <h2>Ecco x battute su l'argomento Dad </h2>
+        <h2>Ecco 2 battute su l'argomento Dad Jokes </h2>
 
         <br />
         <JokeList selezionaApi={jokeType}/> {/**importo il componente "JokeList" il quale restituisce una lista con 10 "jokes" */}

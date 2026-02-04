@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../App.css'; // Assicurati che il percorso del CSS sia corretto
+import knockKnockImg from '../assets/image.png';
 
 function Home() {
     return (
@@ -30,7 +31,7 @@ function Home() {
 
                 {/* Card Knock-knock */}
                 <div className="card">
-                    <img src="https://img.freepik.com/free-vector/hand-knocking-door-concept-illustration_114360-14304.jpg" alt="Knock-knock" />
+                    <img src={knockKnockImg}  alt="Knock-knock" />
                     <div className="card-content">
                         <h3>Knock-knock</h3>
                         <Link to='/pages/SeeJokesKK' className="card-link">Esplora</Link>

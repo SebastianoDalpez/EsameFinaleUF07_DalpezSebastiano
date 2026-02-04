@@ -104,7 +104,7 @@ function JokeList  ({selezionaApi}: IJokeList) { //l'oggetto che arriva si chiam
                         ))}               
                     </ol>
 
-                    <button onClick = { () => refetch()} >Leggi nuove battute </button> 
+                    <button id="LNB" onClick = { () => refetch()} >Leggi nuove battute </button> 
                     {
                         /** Refetch è una funzione della libreria React Query che forza solo il ri-caricamento dell'API, 
                          * non dell'intera pagina del browser, basandosi sull'aspetto principale di React, ovvero quello di aggiornare

@@ -8,7 +8,7 @@ function SeeJokesKK(){
         <>
         <h1>Qui puoi trovare varie battute e barzellette di tipo Knock-knock</h1>
 
-        <h2>Ecco x battute su l'argomento KK </h2>
+        <h2>Ecco 5 battute di tipo Knock-Knock: </h2>
 
         <br />
         

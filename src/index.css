@@ -1,4 +1,5 @@
 /* Reset e font di base */
+
 body {
   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font più moderno */
   background-color: #f0f2f5;
@@ -6,9 +7,13 @@ body {
   margin: 0;
   padding: 40px 20px;
   line-height: 1.6;
+  
 }
 
+
+
 /* --- HOME: Layout a Card --- */
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -16,6 +21,8 @@ body {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+
 
 .card {
   background: #ffffff;
@@ -28,12 +35,17 @@ body {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
+
+
 .card:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 35px rgba(0,0,0,0.12);
 }
 
+
+
 /* Immagine rappresentativa dell'ambito */
+
 .card img {
   width: 100%;
   height: 200px;
@@ -42,20 +54,27 @@ body {
   transition: filter 0.3s ease;
 }
 
+
+
 .card:hover img {
   filter: brightness(1.05);
 }
+
+
 
 .card-content {
   padding: 24px;
   flex-grow: 1;
 }
 
+
+
 .card-content h3 {
   margin: 0 0 10px 0;
   color: #2c3e50;
   font-size: 1.4rem;
 }
+
 
 .card-link {
   display: inline-block;
@@ -70,11 +89,14 @@ body {
   transition: opacity 0.3s ease;
 }
 
+
+
 .card-link:hover {
   opacity: 0.9;
 }
 
 /* --- FORM: Textbox e Bottoni --- */
+
 form {
   max-width: 450px;
   margin: 40px auto;
@@ -83,6 +105,8 @@ form {
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
+
+
 
 label {
   display: block;
@@ -94,8 +118,12 @@ label {
   color: #64748b;
 }
 
+
+
 /* Estetica Textbox rivista */
+
 input[type="text"],
+
 input[type="number"] {
   width: 100%;
   padding: 14px 16px;
@@ -109,6 +137,8 @@ input[type="number"] {
   color: #334155;
 }
 
+
+
 input:focus {
   outline: none;
   border-color: #6e8efb;
@@ -116,7 +146,10 @@ input:focus {
   box-shadow: 0 0 0 4px rgba(110, 142, 251, 0.1);
 }
 
+
+
 /* Estetica Bottone INVIA rivista */
+
 button[type="submit"] {
   width: 100%;
   padding: 16px;
@@ -133,16 +166,22 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
+
+
 button[type="submit"]:hover {
   background-color: #334155;
   transform: scale(1.02);
 }
 
+
 button[type="submit"]:active {
   transform: scale(0.98);
 }
 
+
+
 /* --- TESTI --- */
+
 h1 {
   text-align: center;
   color: #0f172a;
@@ -153,36 +192,19 @@ h1 {
 }
 
 
-/* --- FOOTER FISSO --- */
-.site-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .main-content {
   flex: 1; /* Spinge il footer verso il basso */
 }
 
-footer {
-  flex-shrink: 0; /* Impedisce al footer di restringersi */
-  background-color: #0f172a;
-  color: #f8fafc;
-  text-align: center;
-  padding: 25px 0;
-  width: 100%; /* Larghezza totale schermo */
-  margin: 0; /* Rimuove eventuali margini che creano spazi bianchi */
-  border-top: 3px solid #6e8efb; /* Un tocco di colore */
-}
+/* ---  ESTETICA BOTTONI (Card & Form) --- */
 
-/* --- NUOVA ESTETICA BOTTONI (Card & Form) --- */
 .card-link, button[type="submit"] {
   display: inline-block;
   padding: 12px 28px;
   background: #ffffff;
   color: #0f172a;
   border: 2px solid #0f172a;
-  border-radius: 50px; /* Arrotondati "a pillola" */
+  border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -190,9 +212,11 @@ footer {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 4px 4px 0px #0f172a; /* Effetto ombra netta/retrò-moderna */
+  box-shadow: 4px 4px 0px #0f172a;
   cursor: pointer;
 }
+
+
 
 .card-link:hover, button[type="submit"]:hover {
   background: #0f172a;
@@ -201,10 +225,29 @@ footer {
   box-shadow: 7px 7px 0px #6e8efb; /* Cambia colore ombra al passaggio */
 }
 
+
+
 .card-link:active, button[type="submit"]:active {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px #0f172a;
 }
+
+
+
+footer#mainFooter{
+  background-color: #0f172a;
+  position:static;
+  bottom: 0;
+  width:100%;
+}
+
+
+
+h3#textFooter{
+  color: #ffff;
+}
+
+
 
 select {
   width: 100%;
@@ -218,7 +261,19 @@ select {
   appearance: none; /* Rimuove lo stile di default del browser */
 }
 
+
+
 select:focus {
   outline: none;
   border-color: #007bff;
+}
+
+
+
+button#LNB{
+  border-radius: 15px;
+  background-color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  color: #ffff;
 }

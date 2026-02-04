@@ -11,7 +11,7 @@ function SeeTenJokes(){
         <>
         <h1>Qui puoi trovare varie battute e barzellette sulla programmazione</h1>
 
-        <h2>Ecco 10 battute su l'argomento programming </h2>
+        <h2>Ecco 10 battute su l'argomento programmazione: </h2>
 
         <br />
         

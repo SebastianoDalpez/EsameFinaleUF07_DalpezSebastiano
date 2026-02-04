@@ -8,7 +8,7 @@ function SeeTenJokesGeneral(){
         <>
         <h1>Qui puoi trovare varie battute e barzellette su argomenti generali</h1>
 
-        <h2>Ecco 10 battute su l'argomento General </h2>
+        <h2>Ecco 10 battute su vari argomenti: </h2>
 
         <br />
         

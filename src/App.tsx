@@ -66,7 +66,7 @@ function App() {
 
         </BrowserRouter>
         <footer id="mainFooter">
-          <h3>made by Sebastiano Dalpez</h3>
+          <h3 id="textFooter">made by Sebastiano Dalpez</h3>
         </footer>
       </QueryClientProvider>
 
